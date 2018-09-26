@@ -19,7 +19,7 @@
 <h1 align="center">Login</h1>
 <hr>
 <table border="0" align="center">
-	<form action="login.php" method="POST">
+	<form action="login-proses.php" method="POST">
 	<tr>
 		<th>Username</th>
 		<td><input type="text" name="username" id="username"></td>
@@ -35,21 +35,3 @@
 </table>
 </body>
 </html>
-
-<?php  
-session_start();
-error_reporting(0);
-$user = array(
-				"username" => "pramana",
-				"password" => "1234"
-			);
-
-if (isset($_POST['submit'])) {
-	if ($_POST['username'] == $user['username'] && $_POST['password'] == $user['password']){
-		$_SESSION['username'] = $_POST['username'];
-		header("Location: formawal.php");
-	}else{
-		echo "Username atau Password Tidak Benar";
-	}
-}
-?>
